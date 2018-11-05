@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="connections.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        
+        <title>Chat_laboratorio_5</title>
+    </head>
+    <body>
+        <h1>Chat_sockets de WEB</h1>
+
+        <hr/>
+
+        <script type="text/javascript">
+            document.onkeydown = function (e) {
+                e = e || window.event;
+                switch (e.which || e.keyCode) {
+                        case 13 : 
+                            addMessage();
+                }
+            }
+        
+        </script>
+        <div class="caja">
+            <input class="entradas" type="text" name="id-entradas" id="id-entradas" placeholder="ID">
+            <input class="entradas" type="text" name="nombre-entradas" id="nombre-entradas" placeholder="Nombre">
+            <input class="entradas" type="text" name="text-entradas" id="text-entradas" placeholder="Mensaje">
+            <button class="btn" onclick="sendMessage()">enviar 
+            </button>
+
+            <select id="quick-reply">
+                <option value="">Quick reply</option>
+                <option value="LOL">jajaja</option>
+                <option value="LMFAO">WTF</option>
+                <option value="ROTL">:V</option>
+                <option value="NSFW">lol</option>
+            </select>
+        </div>
+        
+        <div class="mensajes" id="area_mensajes">
+           
+        </div>
+    </body>
+</html>
